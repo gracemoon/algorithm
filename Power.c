@@ -10,12 +10,28 @@
 */
 
 #include <stdio.h>
+#include <math.h>
+double Power(double base, int exponent) {
+    double m=base;
+    if(exponent==0){
+        m=1;
+    }else{
+      for(int i=1;i<exponent;i++){
+            m*=m;
+        }  
+    }
+    
+    return m;
+}
 
 int main(){
     int m;
-    for(int i=0;i<10;i++){
-
-        printf("the n =%d : %d \n",i,m);
+    for(int i=0,j=0;i<10,j<10;i++,j++){
+        if(i==0 && j==0){
+            continue;
+        }
+        m=Power(i,j);
+        printf("the i = %d and j = %d: %.6lf \n",i,j,m);
     }
     return 0;
 }
