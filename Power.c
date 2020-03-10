@@ -15,17 +15,21 @@ double Power(double base, int exponent) {
     double m=base;
     if(exponent==0){
         m=1;
+    }else if(exponent<0){
+      for(int i=1;i<-exponent;i++){
+            m*=base;
+        }
+        m=1/m;  
     }else{
-      for(int i=1;i<exponent;i++){
-            m*=m;
-        }  
+        for(int i=1;i<exponent;i++){
+            m*=base;
+        }
     }
-    
     return m;
 }
 
 int main(){
-    int m;
+    double m;
     for(int i=0,j=0;i<10,j<10;i++,j++){
         if(i==0 && j==0){
             continue;
