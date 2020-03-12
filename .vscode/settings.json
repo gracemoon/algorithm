@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.bib": "bibtex",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp"
     }
 }
