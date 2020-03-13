@@ -49,5 +49,5 @@ TreeNode* createTree(){
     }
     return node;
 }
-TreeNode* root=createTree();
+
 #endif
