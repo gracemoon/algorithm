@@ -31,13 +31,3 @@ void quickSort(int* arr,int x,int y){
     }
     
 }
-
-int main(){
-    // int array[9]={4,1,5,2,7,3,9,8,6};
-    int array[9]={4,5,1,6,2,7,3,8};
-    quickSort(array,0,7);
-    for(int i=0;i<8;i++){
-        printf("%d",array[i]);
-    }
-    return 0;
-}
