@@ -3,6 +3,7 @@
 #include <malloc.h>
 typedef struct StackNode{
     int value;
+    char c;
     struct StackNode* next;
     
 }StackNode;
@@ -11,9 +12,10 @@ typedef struct Stack{
 
     struct StackNode* stack;
 
-    void push(int value) {
+    void push(int value,char c) {
         StackNode* node=(StackNode*)malloc(sizeof(StackNode));
         node->value=value;
+        node->c=c;
         node->next=stack;
         stack=node;
     }
@@ -22,11 +24,12 @@ typedef struct Stack{
             stack=stack->next;
         }
     }
-    int top() {
+
+    StackNode* top(){
         if(stack){
-            return stack->value;
+            return stack;
         }
-        return -1;
+        return NULL;
     }
 
 }Stack;

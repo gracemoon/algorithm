@@ -17,13 +17,22 @@
 
 bool duplicate(int numbers[], int length, int* duplication) {
     quickSort(numbers,0,length-1);
-    for(int i=0;i<length;i++){
-        printf("%d",numbers[i]);
+    bool flag=false;
+    for(int i=0;i<length-1;i++){
+        if(numbers[i]==numbers[i+1]){
+            duplication=&numbers[i];
+            flag=true;
+            break;
+        }
     }
+    return flag;
 }
 
 int main(){
-    int arr[10]={0,1,3,5,2,5,2,4,5,6};
-    
+    int arr[10]={2,3,1,0,2,5,3};
+    int* dup;
+    // dup=&arr[8];
+    duplicate(arr,7,dup);
+    printf("%d",*dup);
     return 0;
 }

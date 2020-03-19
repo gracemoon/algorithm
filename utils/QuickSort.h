@@ -1,9 +1,12 @@
+#ifndef QUICKSORT
+#define QUICKSORT
+
 #include <stdio.h>
 
 void quickSort(int* arr,int x,int y){
     int i=x;
     int j=y;
-    while(i<j){
+    while(i<=j){
         if(arr[i]>arr[x] && arr[j]<arr[x]){
             int temp=arr[i];
             arr[i]=arr[j];
@@ -15,15 +18,17 @@ void quickSort(int* arr,int x,int y){
         if(arr[j]>=arr[x]){
             j--;
         }
+        // printf("j --- %d\n",j);
     }
+    
     int temp=arr[j];
     arr[j]=arr[x];
     arr[x]=temp;
-    for(int k=0;k<8;k++){
+    for(int k=0;k<y+1;k++){
         printf("%d",arr[k]);
     }
     printf("\n");
-    if(x<i-1){
+    if(x<j-1){
        quickSort(arr,x,j-1); 
     }
     if(j+1<y){
@@ -31,3 +36,5 @@ void quickSort(int* arr,int x,int y){
     }
     
 }
+
+#endif
