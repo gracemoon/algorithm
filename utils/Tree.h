@@ -29,7 +29,7 @@ void traveralTree(TreeNode* root){
 
 
 char* str="abd##e##cf##g";
-int array[13]={1,2,4,0,0,5,0,0,3,6,0,0,7};
+int array[13]={10,2,4,0,0,5,0,0,3,6,0,0,7};
 int length=13;
 int current=0;
 TreeNode* createTree(){
