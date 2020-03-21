@@ -12,15 +12,60 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-int cutRope(int number) {
-    
+
+int g;
+
+int cutRope1(int number) {
+    int max=1;
+
+    for(int i=1;i<=number;i++){
+        if(i!=g){
+            int local_max;
+            if(i==number){
+                local_max=i;
+            }else{
+                local_max=i*cutRope1(number-i);
+            }
+            if(max<local_max){
+                max=local_max;
+            } 
+        }
+        
+    }
+    return max;
 }
 
-int main(){
-    int m;
-    for(int i=0;i<10;i++){
+int cutRope2(int number) {
+    g=number;
+    int max=cutRope1(number);
+    return max;
+}
 
-        printf("the n = %d : %d \n",i,m);
+int cutRope(int number){
+    int max[number];
+    for(int i=1;i<=number;i++){
+        max[i]=1;
+        for(int j=1;j<=i;j++){
+            if(j==number){
+                continue;
+            }
+            int local;
+            if(i==j){
+                local=j;
+            }else{
+                local=max[j]*(i-j);
+            }
+            if(local>max[i]){ 
+                max[i]=local;
+            }
+        }
     }
+    return max[number];
+}
+
+
+int main(){
+    int m=cutRope(8);
+    printf("%d",m);
     return 0;
 }
