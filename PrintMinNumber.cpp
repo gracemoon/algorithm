@@ -11,25 +11,71 @@
 #include <iostream>
 #include <vector>
 #include <string>
+// #include <sstream> 
+
 using namespace std;
 
 
 class Solution{
 public:
-    string PrintMinNumber(vector<int> numbers) {
-        string str="";
-        return str;
+    string intToString(int num){
+        string s="";
+        string index="0123456789";
+        do{
+            int b=num%10;
+            s+=index[b];
+            num=num/10;
+        }while(num>0);
+        for(int i=0,j=s.length()-1;i<j;i++,j--){
+            int t=s[i];
+            s[i]=s[j];
+            s[j]=t;
+        }
+        return s;
     }
-    string FirstChar(int num){
-        return to_string(num);
+    double vectorToInt(vector<int> number){
+        double m=0;
+        int index=0;
+        for(int i=number.size()-1;i>=0;i--){
+            double local=(double)number[i];
+            for(int j=0;j<index;j++){
+                local*=10;
+            }
+            m+=local;
+            string local_s=intToString(number[i]);
+            index+=local_s.length();
+        }
+        return m;
     }
 
+    string PrintMinNumber(vector<int> numbers) {
+        for(int i=0;i<numbers.size();i++){
+            for(int j=0;j<numbers.size()-i-1;j++){
+                double t=this->vectorToInt(numbers);
+                int temp=numbers[j];
+                numbers[j]=numbers[j+1];
+                numbers[j+1]=temp;
+                double t1=this->vectorToInt(numbers);
+                if(t1>t){
+                    int temp=numbers[j];
+                    numbers[j]=numbers[j+1];
+                    numbers[j+1]=temp;
+                }
+            }
+        }
+        // double m=vectorToInt(numbers);
+        // cout<<m<<endl;
+        string str="";
+        for(int i=0;i<numbers.size();i++){
+            str+=intToString(numbers[i]);
+        }
+        return str;
+    }
 };
 
 int main(){
-    // Solution s;
-    int i=32;
-    string s=to_string(i);
-    cout<<"ok"<<endl;
+    Solution s;
+    vector<int> numbers={3334,3,3333332};
+    cout<<s.PrintMinNumber(numbers)<<endl;
     return 0;
 }
