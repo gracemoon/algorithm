@@ -12,20 +12,63 @@
 
 */
 
-#include <stdio.h>
+// #include <stdio.h>
 #include <iostream>
 #include <vector>
 using namespace std;
 
-bool VerifySquenceOfBST(vector<int> sequence) {
-    
-}
+class Solution{
+public:
+    bool VerifySquenceOfBST(vector<int> sequence) {
+        if(sequence.size()==0){
+            return false;
+        }
+        bool res=true;
+        for(int i=0;i<sequence.size();i++){
+            cout<<sequence[i]<<endl;
+            bool left=true;
+            if(i==0){
+                left=true;
+            }else{
+                int low_big[2]={0,0};
+                for(int j=0;j<i;j++){
+                    if(low_big[1]==0 && sequence[j]<sequence[i]){
+                        low_big[0]=1;
+                    }else if(sequence[j]>=sequence[i]){
+                        low_big[1]=1;
+                    }else{
+                        left=false;
+                        break;
+                    }
+                }
+            }
+            bool right=true;
+            // if(i==(sequence.size()-1)){
+            //     right=true;
+            // }else{
+            //     for(int j=i+1;j<sequence.size();j++){
+            //         if(sequence[j]<=sequence[i] && j>i+1){
+            //             right=false;
+            //             break;
+            //         }
+            //     }
+            // }
+            if(left==false || right==false){
+                res=false;
+                break;
+            }
+        }
+        return res;
+    }
+};
+
 
 int main(){
-    vector<int> sequence;
-    for(int i=0;i<10;i++){
-        sequence.push_back(i);
-    }
-    cout<<VerifySquenceOfBST(sequence)<<endl;
+    Solution s;
+    vector<int> sequence={4,8,6,12,16,14,10};
+    // for(int i=0;i<sequence.size();i++){
+    //     cout<<sequence[i]<<", ";
+    // }
+    cout<<s.VerifySquenceOfBST(sequence)<<endl;
     return 0;
 }
