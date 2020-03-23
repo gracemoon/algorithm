@@ -5,4 +5,4 @@ The c++ folder is implemented in the c++ programming language, and the file suff
 
 The c folder is implemented in the c programming language, and the file suffix is \.c.
 
-The folder contains common modules that implement basic data structures and algorithms, including linear tables, stacks, queues, trees, and more.
+The utils folder contains common modules that implement basic data structures and algorithms, including linear tables, stacks, queues, trees, and more.
