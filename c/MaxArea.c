@@ -21,7 +21,7 @@ Output: 49
 #include <stdbool.h>
 #include <string.h>
 
-int maxArea(int* height, int heightSize){
+int maxArea1(int* height, int heightSize){
     int max=-1;
     for(int i=0;i<heightSize-1;i++){
         for(int j=i+1;j<heightSize;j++){
@@ -34,12 +34,24 @@ int maxArea(int* height, int heightSize){
     return max;
 }
 
+int maxArea(int* height, int heightSize){
+    int begin=0;
+    int end=heightSize-1;
+    int max=0;
+    while(begin<end){
+        int local_low=height[begin]<height[end]?height[begin]:height[end];
+        if(local_low*(end-begin)>max){
+                max=local_low*(end-begin);
+        }
+        if(height[begin]<height[end]){
+            begin++;
+        }else{
+            end--;
+        }
+    }
+
+}
 
 int main(){
-    int m;
-    for(int i=0;i<10;i++){
-
-        printf("the n = %d : %d \n",i,m);
-    }
     return 0;
 }
