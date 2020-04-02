@@ -16,22 +16,36 @@
 #include <stdbool.h>
 
 char char_list[256];
+int index=0;
 //Insert one char from stringstream
-void Insert(char ch)
-{
-        
+void Insert(char ch){
+    char_list[index++]=ch;
 }
 //return the first appearence once char in current stringstream
-char FirstAppearingOnce()
-{
-
+char FirstAppearingOnce(){
+    char char_list_local[256];
+    for(int i=0;i<256;i++){
+        char_list_local[i]=char_list[i];
+    }
+    for(int i=0;i<index;i++){
+        if(char_list[i]==' '){
+            continue;
+        }
+        int j=i+1;
+        for(;j<index;j++){
+            if(char_list[i]==char_list[j]){
+                char_list[j]=' ';
+                break;
+            }
+        }
+        if(j==index){
+            return char_list[i];
+        }
+    }
+    return '#';
 }
 
 int main(){
-    int m;
-    for(int i=0;i<10;i++){
-
-        printf("the n = %d : %d \n",i,m);
-    }
+    
     return 0;
 }
