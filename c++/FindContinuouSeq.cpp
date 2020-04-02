@@ -21,7 +21,22 @@ using namespace std;
 class Solution{
 public:
     vector<vector<int> > FindContinuousSequence(int sum) {
-        
+        vector<vector<int>> m;
+        for(int i=0;i<sum;i++){
+            int local_sum=0;
+            int local_i=i+1;
+            while(local_sum<sum){
+                local_sum+=local_i;
+            }
+            if(local_sum==sum){
+                vector<int> local_vector;
+                for(int j=i;j<=local_i;j++){
+                    local_vector.push_back(j);
+                }
+                m.push_back(local_vector);
+            }
+        }
+        return m;
     }
 };
 
