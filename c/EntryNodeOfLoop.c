@@ -10,7 +10,9 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <malloc.h>
-#include "utils/List.h"
+#include "../utils/List.h"
+
+
 
 ListNode* EntryNodeOfLoop(ListNode* pHead)
 {
@@ -43,6 +45,15 @@ ListNode* EntryNodeOfLoop(ListNode* pHead)
         }else{
             return NULL;
         }
+    }
+    if(p1!=NULL && p2!=NULL){
+        p1=pHead;
+        p2=p2->next;
+        while(p1!=p2){
+            p1=p1->next;
+            p2=p2->next;
+        }
+        return p1;
     }
     return NULL ;
 }
