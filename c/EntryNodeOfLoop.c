@@ -14,19 +14,37 @@
 
 ListNode* EntryNodeOfLoop(ListNode* pHead)
 {
-    ListNode* p=pHead;
-    while(p){
-        ListNode* t=pHead;
-        while(p!=t){
-            if(p->next==t){
-                return t;
-            }else{
-                t=t->next;
-            }
-        }
-        p=p->next;
+    if(pHead==NULL){
+        return NULL;
     }
-    return NULL;
+    ListNode* p1=pHead;
+    ListNode* p2;
+    if(pHead->next){
+        p2=pHead->next;
+    }else{
+        return NULL;
+    }
+    
+    while(p1 && p2){
+        if(p1==p2){
+            break;
+        }
+        if(p2->next){
+            if(p2->next->next){
+                p2=p2->next->next;
+            }else{
+                return NULL;
+            }
+        }else{
+            return NULL;
+        }
+        if(p1->next){
+            p1=p1->next;
+        }else{
+            return NULL;
+        }
+    }
+    return NULL ;
 }
 
 int main(){

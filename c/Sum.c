@@ -10,15 +10,9 @@
 #include <stdio.h>
 
 int Sum_Solution(int n) {
-    
-    int m=0;
-    for(int i=1;i<=n;i++){
-        m+=i;
-    }
-    printf("m : %d\n",m);
-    n<<=2;
-    n>>=2;
-    return n;
+    int sum=n;
+    sum && (sum+=Sum_Solution(n-1));
+    return sum;
 }
 
 int main(){

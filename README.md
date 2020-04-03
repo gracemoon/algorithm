@@ -13,3 +13,4 @@ The algorithm implements various data structures and  algorithms.
 - [Longest Palindromic Substring](/c/LongestPalindrome.c)
 - [Minimum Stack](/c/MinStack.c)
 - [Regular Expression Matching](/c/RegularMatch.c)
+- [Short-Circuit Evaluation](/c/Sum.c)
