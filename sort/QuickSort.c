@@ -16,10 +16,10 @@ void quickSort(int* arr,int low,int high){
             x++;
             y--;
         }
-        if(arr[x]<arr[low]){
+        if(arr[x]<=arr[low]){
             x++;
         }
-        if(arr[y]>arr[low]){
+        if(arr[y]>=arr[low]){
             y--;
         }
 
@@ -35,9 +35,9 @@ void quickSort(int* arr,int low,int high){
 
 
 int main(){
-    int arr[]={9,8,7,6,5,4,3,2,1,0};
-    quickSort(arr,0,9);
-    for(int i=0;i<10;i++){
+    int arr[]={-1, 0, 1, 2,-1, -4,-1,-4,2};
+    quickSort(arr,0,8);
+    for(int i=0;i<9;i++){
         printf("%d\t",arr[i]);
     }
     return 0; 
