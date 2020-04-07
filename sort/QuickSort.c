@@ -22,7 +22,6 @@ void quickSort(int* arr,int low,int high){
         if(arr[y]>=arr[low]){
             y--;
         }
-
     }
     swap(&arr[low],&arr[y]);
     if(y-1>low){
