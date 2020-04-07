@@ -17,3 +17,4 @@ The algorithm implements various data structures and  algorithms.
 - [Symmetrical Tree](/c/IsSymmetrical.c)
 - [Circular Linked List](/c/EntryNodeOfLoop.c)
 - [Valid Parentheses](/c/ValidParentheses.c)
+- [Merge K Sorted Lists](/c/MergeKSortedList.c)
