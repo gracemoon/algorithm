@@ -18,3 +18,4 @@ The algorithm implements various data structures and  algorithms.
 - [Circular Linked List](/c/EntryNodeOfLoop.c)
 - [Valid Parentheses](/c/ValidParentheses.c)
 - [Merge K Sorted Lists](/c/MergeKSortedList.c)
+- [Remove Duplicates from Array](/c/Unique.c)
