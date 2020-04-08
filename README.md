@@ -19,3 +19,4 @@ The algorithm implements various data structures and  algorithms.
 - [Valid Parentheses](/c/ValidParentheses.c)
 - [Merge K Sorted Lists](/c/MergeKSortedList.c)
 - [Remove Duplicates from Array](/c/Unique.c)
+- [Search in Rotated Sorted Array](/c/SearchRotatedArr.c)
