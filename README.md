@@ -21,3 +21,5 @@ The algorithm implements various data structures and  algorithms.
 - [Remove Duplicates from Array](/c/Unique.c)
 - [Search in Rotated Sorted Array](/c/SearchRotatedArr.c)
 - [Multiply Strings](/c/MultiplyStrings.c)
+- [Spiral Matrix](/c/SpiralMatrix.c)
+- [Climbing Stairs](/c/ClimbingStairs.c)
