@@ -23,3 +23,5 @@ The algorithm implements various data structures and  algorithms.
 - [Multiply Strings](/c/MultiplyStrings.c)
 - [Spiral Matrix](/c/SpiralMatrix.c)
 - [Climbing Stairs](/c/ClimbingStairs.c)
+- [Subsets](/c/Subsets.c)
+- [Gray Code](/c/GrayCode.c)

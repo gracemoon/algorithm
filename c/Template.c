@@ -13,6 +13,7 @@
 #include <malloc.h>
 
 
+
 int main(){
     int m;
     for(int i=0;i<10;i++){
