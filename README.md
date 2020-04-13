@@ -28,3 +28,4 @@ The algorithm implements various data structures and  algorithms.
 - [Maximum Depth of Binary Tree](/c/MaxDepthofBinTree.c) 
 - [Best Time to Buy and Sell Stock](/c/BuyandSellStock.c) 
 - [Single Number](/c/SingleNumber.c) 
+- [Intersection of Two Linked Lists](/c/InterLinkedLists.c) 

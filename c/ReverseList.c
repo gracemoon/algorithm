@@ -11,22 +11,46 @@
 #include <malloc.h>
 #include "utils/List.h"
 
-ListNode* reverseList(ListNode* pHead) {
-        if(pHead==NULL){
-            return NULL;
-        }
-        ListNode* p=pHead;
+// ListNode* reverseList(ListNode* pHead) {
+//         if(pHead==NULL){
+//             return NULL;
+//         }
+//         ListNode* p=pHead;
         
-        ListNode* p1=pHead->next;
-        p->next=NULL;
-        while(p1){
-            ListNode* temp=p;
-            p=p1;
-            p1=p1->next;
-            p->next=temp;
+//         ListNode* p1=pHead->next;
+//         p->next=NULL;
+//         while(p1){
+//             ListNode* temp=p;
+//             p=p1;
+//             p1=p1->next;
+//             p->next=temp;
+//         }
+//         return p;
+//     }
+
+
+
+//Definition for singly-linked list.
+struct ListNode {
+    int val;
+    struct ListNode *next;
+};
+
+
+struct ListNode* reverseList(struct ListNode* head){
+    struct ListNode* p=head;
+    while(p!=NULL){
+        if(p!=head){
+            struct ListNode* q=p->next;
+            p->next=head;
+            head=p;
+            p=q;
         }
-        return p;
+        p=p->next;
     }
+    return head;
+}
+
 
 int main(){
     ListNode* head;
