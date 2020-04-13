@@ -27,3 +27,4 @@ The algorithm implements various data structures and  algorithms.
 - [Gray Code](/c/GrayCode.c) 
 - [Maximum Depth of Binary Tree](/c/MaxDepthofBinTree.c) 
 - [Best Time to Buy and Sell Stock](/c/BuyandSellStock.c) 
+- [Single Number](/c/SingleNumber.c) 

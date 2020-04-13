@@ -79,19 +79,18 @@ int maxPath(struct TreeNode* root){
         }else{
             center=root->val+left;
         }
+        pre=center;
         if(left>root->val){
             if(left>(left+root->val)){ 
                 max=left;
             }else{
                 max=left+root->val;
-                pre=max;
             }
         }else{
             if(root->val>(left+root->val)){
                 max=root->val;
             }else{
                 max=left+root->val;
-                pre=max;
             }
         }
     }else{
@@ -105,21 +104,24 @@ int maxPath(struct TreeNode* root){
         if(right>max){
             if(right>(right+center)){ 
                 max=right;
-                pre=0;
             }else{
                 max=right+center;
-                pre=max;
             }
         }else{
             if(right+center>max){
                 max=right+center;
-                pre=max;
             }
+        }
+        if(right+root->val>pre){
+            pre=right+root->val;
         }
     }
     if(max>m){
        m=max; 
     }    
+    if(pre<0){
+        pre=0;
+    }
     return pre;
 }
 int maxPathSum(struct TreeNode* root){
