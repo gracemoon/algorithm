@@ -29,3 +29,4 @@ The algorithm implements various data structures and  algorithms.
 - [Best Time to Buy and Sell Stock](/c/BuyandSellStock.c) 
 - [Single Number](/c/SingleNumber.c) 
 - [Intersection of Two Linked Lists](/c/InterLinkedLists.c) 
+- [Boyer-Moore Voting Algorithm](/c/MajorityElement.c) 
