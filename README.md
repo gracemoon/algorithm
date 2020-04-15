@@ -30,3 +30,4 @@ The algorithm implements various data structures and  algorithms.
 - [Single Number](/c/SingleNumber.c) 
 - [Intersection of Two Linked Lists](/c/InterLinkedLists.c) 
 - [Boyer-Moore Voting Algorithm](/c/MajorityElement.c) 
+- [Edit Distance](/c/EditDistance.c)
