@@ -48,12 +48,6 @@
 #include <string.h>
 #include <malloc.h>
 
-int binarySearch(int k,int x,int y){
-    int mid=(x+y)/2;
-    int a=binarySearch()
-}
-
-
 int superEggDrop(int K, int N){
     int** record=(int**)malloc(sizeof(int*)*K);
     for(int i=0;i<K;i++){
