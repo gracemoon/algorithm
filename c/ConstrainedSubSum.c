@@ -99,16 +99,29 @@ int constrainedSubsetSum(int* nums, int numsSize, int k){
 }
 
 int constrainedSubsetSum(int* nums, int numsSize, int k){
-    int** record=(int**)malloc(sizeof(int)*2);
-    record[0]=(int*)malloc(sizeof(int)*numsSize);
-    record[1]=(int*)malloc(sizeof(int)*numsSize);
-    record[0][0]=nums[0];
-    record[1][0]=0;
-    for(int i=1;i<numsSize;i++){
-        if(record[i-1]>0){
+    int* record=(int*)malloc(sizeof(int)*numsSize+1);
+    int* stack=(int*)malloc(sizeof(int)*numsSize);
+    int top=-1;
+    int bottom=0;
+    record[0]=0;
+    stack[++top]=0;
+    for(int i=1;i<=numsSize;i++){
+        if(stack[top]-stack[bottom]>=k-1){
+            bottom++;
         }
+        if(record[stack[bottom]]>0){
+            record[i]=record[stack[bottom]]+nums[i-1];
+        }
+        while(top>=bottom-1){
+            if(top==bottom-1 || record[stack[top]]>record[i]){
+                stack[++top]=i;
+                break;
+            }
+            top--;
+        }
+
     }
-    return record[numsSize-1];
+    return record[numsSize];
 }
 
 int main(){

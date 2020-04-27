@@ -32,3 +32,4 @@ The algorithm implements various data structures and  algorithms.
 - [Boyer-Moore Voting Algorithm](/c/MajorityElement.c) 
 - [Edit Distance](/c/EditDistance.c)
 - [Max Sliding  Window](/c/MaxSlideWindow.c)
+- [Constrained Subset Sum](/c/ConstrainedSubSum.c)
