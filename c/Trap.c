@@ -22,7 +22,7 @@
 #include <string.h>
 #include <malloc.h>
 
-int trap(int* height, int heightSize){
+int trap2(int* height, int heightSize){
     int* record=(int*)malloc(sizeof(int)*heightSize);
     int* stack=(int*)malloc(sizeof(int)*heightSize);
     int top=-1;
@@ -60,6 +60,51 @@ int trap(int* height, int heightSize){
     for(int i=0;i<heightSize;i++){
         printf("%d",record[i]);
         sum=sum+(record[i]-height[i]);
+    }
+    return sum;
+}
+
+int trap1(int* height, int heightSize){
+    int* stack=(int*)malloc(sizeof(int)*heightSize);
+    int top=-1;
+    int sum=0;
+    for(int i=0;i<heightSize;i++){
+        while(top>=0 && height[i]>height[stack[top]]){
+            int pre_top=top;
+            top--;
+            if(top>=0){
+                int distance=i-stack[top]-1;
+                int high=height[i]<height[stack[top]]?height[i]-height[stack[pre_top]]:height[stack[top]]-height[stack[pre_top]];
+                sum+=(distance*high);
+            }
+        }
+        stack[++top]=i;
+    }
+    return sum;
+}
+
+int trap(int* height, int heightSize){
+    int sum=0;
+    int x=0;
+    int y=heightSize-1;
+    int left_max=-1;
+    int right_max=-1;
+    while(x<y){
+        if(height[x]<left_max){
+            sum+=(left_max-height[x]);
+        }else{
+            left_max=height[x];
+        }
+        if(height[y]<right_max){
+            sum+=(right_max-height[y]);
+        }else{
+            right_max=height[y];
+        }
+        if(height[x]>height[y]){
+            y--;
+        }else{
+            x++;
+        }
     }
     return sum;
 }
