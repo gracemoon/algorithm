@@ -33,3 +33,4 @@ The algorithm implements various data structures and  algorithms.
 - [Edit Distance](/c/EditDistance.c)
 - [Max Sliding  Window](/c/MaxSlideWindow.c)
 - [Constrained Subset Sum](/c/ConstrainedSubSum.c)
+- [Trap](/c/Trap.c)
