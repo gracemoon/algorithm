@@ -34,3 +34,7 @@ The algorithm implements various data structures and  algorithms.
 - [Max Sliding  Window](/c/MaxSlideWindow.c)
 - [Constrained Subset Sum](/c/ConstrainedSubSum.c)
 - [Trap](/c/Trap.c)
+
+
+### statement
+All cases of this project comes from https://leetcode-cn.com/ and https://www.nowcoder.com/.

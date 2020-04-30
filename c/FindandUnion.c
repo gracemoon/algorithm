@@ -37,22 +37,40 @@ N 在[1,200]的范围内。
 #include <string.h>
 #include <malloc.h>
 
-void find(int** M, int MSize,int x){
-    for(int i=x+1;i<MSize;i++){
-        find(M,MSize,i);
+int find(int* parent,int element){
+    if(parent[element]==-1){
+        return element;
     }
-    M[x][x]=1;
+    return find(parent,parent[element]);
+}
+
+void unionFunc(int* parent,int element1,int element2){
+    int set1=find(parent,element1);
+    int set2=find(parent,element2);
+    if(set1!=set2){
+        parent[set2]=set1;
+    }
 }
 
 int findCircleNum(int** M, int MSize, int* MColSize){
-    int max=0;
+    int* parent=(int*)malloc(sizeof(int)*MSize);
     for(int i=0;i<MSize;i++){
-        if(M[i][i]==1){
-            max++;
-            find(M,MSize,i);
+        parent[i]=-1;
+    }
+    for(int i=0;i<MSize;i++){
+        for(int j=0;j<MSize;j++){
+            if(i!=j && M[j]!=0){
+                unionFunc(parent,i,j);
+            }
         }
     }
-    return max;
+    int count=0;
+    for(int i=0;i<MSize;i++){
+        if(parent[i]==-1){
+            count++;
+        }
+    }
+    return count;
 }
 
 int main(){
