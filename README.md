@@ -37,4 +37,5 @@ The algorithm implements various data structures and  algorithms.
 
 
 ### statement
-All cases of this project comes from https://leetcode-cn.com/ and https://www.nowcoder.com/.
+ - All cases of this project comes from https://leetcode-cn.com/ and https://www.nowcoder.com/.
+ - Commercial reproduction is strictly prohibited, and please indicate the source for non-commercial reproduction.
