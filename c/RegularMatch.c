@@ -312,7 +312,7 @@ bool match(char* str, char* pattern){
 
 int main(){
     char* str="b";
-    char* pattern="b.*c";
+    char* pattern="b.*";
     bool result=match(str,pattern);
     if(result){
         printf("true"); 
